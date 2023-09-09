@@ -1,45 +1,42 @@
-# Capstone_Project_Modul_3 - TELCO CUSTOMER CHURN
----
-# Business Problem Understanding
+# Development of Customer Churn Prediction Model in the Telecommunications Industry for Customer Retention Optimization
 
-1. Latar Belakang:
+## Overview
 
-Dalam industri telekomunikasi, fenomena churn pelanggan (churn rate) merupakan masalah yang umum terjadi. Churn pelanggan merujuk pada pelanggan yang memutuskan untuk berhenti menggunakan layanan sebuah perusahaan telekomunikasi dan beralih ke pesaing atau bahkan tidak menggunakan layanan telekomunikasi sama sekali. Tingkat churn yang tinggi dapat memiliki dampak negatif pada bisnis perusahaan, seperti pendapatan yang menurun, penurunan pangsa pasar, dan biaya akuisisi pelanggan yang meningkat. Dengan kondisi tersebut perusahaan ingin mengembangkan model prediksi churn customer untuk membantu mengidentifikasi customer yang berpotensi churn di masa depan. Dengan memiliki model prediksi yang akurat, perusahaan dapat mengambil tindakan pencegahan yang tepat untuk mempertahankan customer yang bernilai dan mengurangi tingkat churn dengan memahami faktor-faktor yang mempengaruhi churn dan mengembangkan strategi retensi yang efektif. Selain mempertahankan customer yang terprediksi akan churn juga diharapkan dari model dapat membedakan untuk target yang sebetulnya tidak perlu dilakukan penanganan karena aktualnya tidak ada indikasi untuk berhenti berlangganan sehingga meminimalkan juga biaya operasional yang keluar tanpa arti. Oleh karenanya akan dicari model dan metriks terbaik untuk mengatasi trade-off dari permaslahan yang terjadi.
+This repository contains the code and documentation for a Telco customer churn prediction project. In the telecommunications industry, customer churn is a common problem that can have a significant impact on business revenue, market share, and customer acquisition costs. The goal of this project is to develop a machine learning model that can classify customers as churn or non-churn based on various features. By accurately predicting churn, the company can take appropriate retention strategies and minimize operational costs.
 
-2. Tujuan:
+## Problem Statement
 
-Tujuan utama dari analisis ini adalah untuk mengembangkan model prediksi churn customer yang dapat mengklasifikasikan customer sebagai churn atau tidak churn berdasarkan fitur-fitur yang ada. Model ini akan membantu perusahaan mengidentifikasi customer dengan risiko churn tinggi sehingga dapat dilakukan intervensi atau strategi retensi yang sesuai dan juga memaksimalkan prediksi yang tidak memiliki indikasi churn sehingga biaya operasional untuk penanganan dapat tersalurkan secara akurat untuk customer yang aktualnya memang churn.
+The main objective of this project is to build a machine learning model that can classify Telco customers as churn or non-churn, enabling the company to optimize retention strategies with minimal operational costs.
 
+## Business Benefits
 
-3. Problem Statement:
-- Bagaimana membangun model machine learning yang dapat mengklasifikasikan churn customer perusahaan telco sehingga bisa digunakan oleh perusahaan untuk mengoptimalkan strategi retensi dengan biaya operasional yang minimum?
+- **Improved Customer Retention**: With an accurate churn prediction model, the company can identify customers at high risk of churn and implement effective retention strategies tailored to their needs.
 
+- **Increased Revenue**: Reducing churn effectively can lead to higher customer retention, resulting in increased revenue as existing customers continue to use the company's services.
 
+- **Cost Reduction**: By identifying customers who are unlikely to churn, the company can avoid unnecessary retention efforts, reducing operational costs.
 
-4. Manfaat Bisnis:
-- Dengan memiliki model prediksi churn yang akurat, perusahaan dapat mengidentifikasi customer dengan risiko churn tinggi dan mengambil tindakan pencegahan yang tepat untuk mempertahankan mereka.
-- Mengurangi churn customer secara efektif dapat meningkatkan pendapatan perusahaan dan mengurangi biaya akuisisi customer baru. 
-- Model prediksi churn yang baik juga dapat membantu perusahaan mengoptimalkan alokasi sumber daya dan strategi retensi, dengan fokus pada customer yang memiliki dampak bisnis yang signifikan.
-- Melalui penggunaan model prediksi churn, perusahaan dapat mengembangkan strategi pemasaran yang lebih personal, meningkatkan kepuasan customer, dan memperkuat hubungan jangka panjang dengan customer.
+- **Personalized Marketing**: The churn prediction model can also enable the company to develop personalized marketing strategies, enhancing customer satisfaction and long-term relationships.
 
-5. Evaluation Metrics:
+## Conclusion
 
-Metrics evaluasi yang digunakan pada pemodelan kali ini akan dilihat dari konteks kasus nya terlebih dahulu. Dalam kasus Telco Customer Churn, nilai 1 direpresentasikan untuk pelanggan yang churn dan nilai 0 direpresentasikan untuk customer yang tidak churn. Untuk false positive dan false negative yang ada pada kasus ini dapat dijelaskan sebagai berikut:
+The project has successfully developed a churn prediction model using the Telco Customer Churn dataset. The best-performing algorithm, Catboost, was selected, and a Random Over Sampling technique was applied to address class imbalance. The chosen evaluation metrics, F2 Score and Recall, prioritize minimizing the risk of false negatives while considering model precision.
 
-- False Positive:
+However, it is important to note that the churn prediction model should not be the sole decision-making tool. Business knowledge, experience, and human judgment should complement the model's results, allowing for a balanced and context-aware decision-making process.
 
-    False positive terjadi ketika model memprediksi bahwa pelanggan churn (nilai prediksi 1), padahal sebenarnya pelanggan tersebut churn (nilai aktual 1). Dalam kasus ini, model secara keliru mengklasifikasikan pelanggan sebagai tidak churn ketika sebenarnya mereka akan berhenti berlangganan. Dampaknya adalah perusahaan mungkin mengalokasikan sumber daya yang tidak perlu untuk mempertahankan pelanggan yang sebenarnya akan churn, yang dapat mengakibatkan biaya yang tinggi.
+## Business Recommendations
 
-- False Negative:
+Based on the results of the churn prediction model, the following business recommendations are suggested:
 
-    False negative terjadi ketika model memprediksi bahwa pelanggan akan tidak churn (nilai prediksi 0), tetapi sebenarnya pelanggan tersebut tidak churn (nilai aktual 0). Dalam kasus ini, model gagal mengidentifikasi dengan tepat pelanggan yang sebenarnya tidak akan berhenti berlangganan. Dampaknya adalah, perusahaan dapat kehilangan pelanggan yang berharga karena tidak mengambil tindakan yang diperlukan untuk mempertahankan mereka, yang dapat mengakibatkan kerugian finansia.
+1. **Improve Customer Service and Support**: Focus on enhancing the customer experience by providing high-quality service and support. Quick and adequate assistance during customer issues or inquiries can improve customer satisfaction and loyalty.
 
-Pada kasus ini, model diharapkan dapat memprediksi customer yang terindikasi churn dengan baik sehingga perlu diminimalkan untuk terjadi false negative dimana perusahaan akan abai membuat customer churn tanpa ada perlakuan retensi, untuk permasalahan ini metrics recall lebih sesuai sebagai acuan tolak ukur model. Disisi lain, perusahaan juga perlu memperhatikan dari sisi biaya dimana apabila false positive tinggi maka perusahaan berpotensi mengalokasikan biaya retensi kepada target yang salah sehingga memakan biaya tinggi yang tidak tepat sasaran. Untuk permasalahan tersebut, metrics F2 lebih sesuai untuk memprioritaskan recall namun tetap memperhatikan presisi model. Dari beberapa pertimbangan permasalahan yang telah dijelaskan, metrics F2 dan Recall akan dikaji dan dievaluasi mana yang dapat membuat objective tercapai namun lebih menguntukan bagi perusahaan.
+2. **Segment Customers**: Segment customers based on churn risk using the model's predictions. Target high-risk customers with tailored retention efforts, such as incentives, special offers, or customized service packages.
 
----
-Kesimpulan
+3. **Analyze Other Influential Factors**: Investigate additional factors that may impact customer churn, such as service pricing, network quality, internet speed, and overall customer satisfaction. Addressing these factors can further reduce churn rates.
 
-Dalam projek kali ini telah dikembangkan model prediksi churn customer yang dapat mengklasifikasikan customer sebagai churn atau tidak churn berdasarkan fitur-fitur yang ada. Model ini membantu perusahaan mengidentifikasi customer dengan risiko churn tinggi sehingga dapat dilakukan intervensi atau strategi retensi yang sesuai dan juga memaksimalkan prediksi yang tidak memiliki indikasi churn sehingga biaya operasional untuk penanganan dapat tersalurkan secara akurat untuk customer yang aktualnya memang churn. Algoritma model terbaik yang didapat setelah dilakukan beberapa proses untuk memprediksi dataset adalah Catboost dengan teknik resampling Random Over Sampling. Evaluasi metrics yang digunakan untuk mengevaluasi kinerja model adalah F2 dimana perusahaan fokus dalam meminimalkan kejadian customer churn yang pergi tanpa perlakuan retensi namun tetap mempertimbangkan presisi model dimana kerugian bisa terjadi apabila customer yang tidak terindikasi churn tapi mendapatkan perlakuan retensi dimana biaya akan keluar sia-sia. Hasil score F2 dari model prediksi adalah 76%, dimana ini model bisa terbilang cukup baik dalam membantu perusahaan mengklasifikasikan customer churn dan tidak. Namun begitu, sebaik apapun model prediksi ini tidak bisa dijadikan sebagai satu-satunya alat tunggal dalam pengambilan keputusan bisnis, penting untuk menggabungkan pengetahuan bisnis, pengalaman, dan pertimbangan manusia untuk memahami dan menginterpretasikan hasil model dengan benar, serta mengambil keputusan yang berimbang dan sesuai dengan konteks bisnis yang lebih baik.
+4. **Collect Customer Feedback**: After implementing retention strategies, collect feedback from customers who still decide to churn. Understanding their reasons for leaving can provide valuable insights for continuous improvement.
+
+By implementing these recommendations, the company can expect to improve customer retention, reduce churn, and ultimately increase revenue while optimizing operational costs.
 
 
-
+Feel free to explore the notebooks, scripts, and models for a detailed understanding of the project's implementation.
